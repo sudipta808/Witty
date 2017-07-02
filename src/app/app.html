@@ -1,0 +1,18 @@
+<ion-menu [content]="content">
+  <ion-content class="bg-color">
+    <ion-list class="list-style">
+      <ion-item class="item-bg-color" *ngFor="let list of menuList" (click)="openPage(list)" [ngClass]="(list.title !== 'Category' && 
+                                                                                  list.title !== 'Upload' &&
+                                                                                  list.title !== 'Settings') ? 'padding-menu-item' : ''">
+        <ion-icon class="accessory-icon-color" name="arrow-down" item-end *ngIf="list.title === 'Category' && !isShowCategory"></ion-icon>
+        <ion-icon class="accessory-icon-color" name="arrow-up" item-end *ngIf="list.title === 'Category' && isShowCategory"></ion-icon>
+        <ion-icon class="accessory-icon-color" name="arrow-forward" item-end *ngIf="list.title !== 'Category'" [ngClass]="(list.title !== 'Category' && 
+                                                            list.title !== 'Upload' &&
+                                                            list.title !== 'Settings') ? 'accessory-icon-pos' : ''"></ion-icon>
+        {{list.title}}
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
