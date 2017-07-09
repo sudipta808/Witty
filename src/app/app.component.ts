@@ -37,6 +37,7 @@ export class MyApp {
       this.splashScreen.hide();
 
       this.getAllCategoryData();
+      //this.nav.setRoot(Upload);
     });
   }
 

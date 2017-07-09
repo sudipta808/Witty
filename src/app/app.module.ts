@@ -14,6 +14,7 @@ import { XHRBackend, RequestOptions } from "@angular/http";
 import { CustomCardComponent } from "../pages/card/custom-card";
 import { IonicImageLoader } from 'ionic-image-loader';
 import { Upload } from "../pages/upload/upload";
+import { ModalOptions } from "../pages/modal-options/modal-options";
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { Upload } from "../pages/upload/upload";
     MyApp,
     WittyDashboard,
     CustomCardComponent,
-    Upload
+    Upload,
+    ModalOptions
   ],
   imports: [
     BrowserModule,
@@ -34,7 +36,8 @@ import { Upload } from "../pages/upload/upload";
     MyApp,
     WittyDashboard,
     CustomCardComponent,
-    Upload
+    Upload,
+    ModalOptions
   ],
   providers: [
     StatusBar,

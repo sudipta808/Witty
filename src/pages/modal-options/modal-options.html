@@ -1,0 +1,18 @@
+<ion-content class="modal-bg">
+    <div class="close-btn">
+        <ion-icon name="close-circle" color="button-color" (click)="dismissModal()"></ion-icon>
+    </div>
+
+    <div class="btn-pos">
+        <div>
+            <button class="btn-property" ion-button color="button-color" outline (click)="openCamera()">
+                <ion-icon name="ios-camera-outline"></ion-icon>
+            </button>
+        </div>
+        <div>
+            <button class="btn-property" ion-button color="button-color" outline (click)="openGallery()">
+                <ion-icon name="ios-images-outline"></ion-icon>
+            </button>
+        </div>
+    </div>
+</ion-content>

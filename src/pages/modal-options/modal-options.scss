@@ -1,0 +1,31 @@
+.modal-wrapper {
+    position: absolute;
+    top: calc(50% - (280px/2));
+    left: calc(50% - (320px/2));
+    width: 315px;
+    height: 250px;
+}
+ion-modal ion-backdrop {
+    visibility: visible;
+}
+
+modal-options {
+
+    .modal-bg {
+        background-color: #d442f4;
+    }
+    .close-btn {
+        float: right;
+        padding: 10px;
+    }
+    .btn-pos {
+        margin-left: 6.8em;
+        margin-top: 1.3em;
+    }
+    .btn-property {
+        width: 3em;
+        height: 2.4em;
+        font-size: 3em;
+    }
+    
+}
