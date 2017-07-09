@@ -4,8 +4,6 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
 import { WittyDashboard } from "../pages/dashboard/WittyDashboard";
-import { ItemDetailsPage } from '../pages/item-details/item-details';
-import { ListPage } from '../pages/list/list';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -13,26 +11,30 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { HTTPService } from "./common/services/http.service";
 import { HttpModule, JsonpModule } from '@angular/http';
 import { XHRBackend, RequestOptions } from "@angular/http";
+import { CustomCardComponent } from "../pages/card/custom-card";
+import { IonicImageLoader } from 'ionic-image-loader';
+import { Upload } from "../pages/upload/upload";
 
 
 @NgModule({
   declarations: [
     MyApp,
     WittyDashboard,
-    ItemDetailsPage,
-    ListPage
+    CustomCardComponent,
+    Upload
   ],
   imports: [
     BrowserModule,
     HttpModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    IonicImageLoader.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     WittyDashboard,
-    ItemDetailsPage,
-    ListPage
+    CustomCardComponent,
+    Upload
   ],
   providers: [
     StatusBar,

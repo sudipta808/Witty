@@ -17,7 +17,7 @@
 
 side-menu-list {
     .list-style {
-        padding-top: 65%;
+        padding-top: 5%;
     }
     .bg-color {
         // background-color: #4CAF50;
@@ -38,5 +38,18 @@ side-menu-list {
     }
     .accessory-icon-color {
         color: #2f3832;
+    }
+    .badge-container{
+      position: relative;
+    }
+    .position {
+        margin-left: 30%;
+        margin-top: 30%;
+    }
+    .circular {
+        border-radius: 50%;
+    }
+    img {
+        clip-path: url(#clipping);
     }
 }

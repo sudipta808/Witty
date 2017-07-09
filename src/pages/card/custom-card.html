@@ -1,0 +1,10 @@
+<ion-list>
+    <ion-card *ngFor="let cardData of cardDataSource">
+        <img-loader src='{{cardData.image}}' (load)="onImageLoad($event)" useImg></img-loader>
+
+        <ion-card-content *ngIf="cardData.message">
+            <p>{{cardData.message}}</p>
+        </ion-card-content>
+    </ion-card>
+
+</ion-list>

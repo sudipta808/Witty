@@ -1,11 +1,11 @@
 import { Component, ViewChild } from '@angular/core';
-import { Platform, MenuController, Nav } from 'ionic-angular';
+import { Platform, MenuController, Nav, Events } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { ListPage } from '../pages/list/list';
 import { WittyDashboard } from "../pages/dashboard/WittyDashboard";
 import { CategoryService } from "./services/category.service";
+import { Upload } from "../pages/upload/upload";
 
 
 @Component({
@@ -25,7 +25,8 @@ export class MyApp {
     public menu: MenuController,
     public statusBar: StatusBar,
     public splashScreen: SplashScreen,
-    private categoryService: CategoryService
+    private categoryService: CategoryService,
+    private events: Events
   ) {
     this.initializeApp();
   }
@@ -41,14 +42,19 @@ export class MyApp {
 
   private getAllCategoryData() {
     this.categoryService.getAllCategoryData().subscribe(response => {
-      if (response)
+      if (response) {
         this.menuList = response.data;
+        this.categoryService.setCategory(this.menuList[0].categoryList);
+        this.events.publish("CategoryNotification", this.categoryService.getCategory());
+        this.openPage(this.menuList[0]);
+      }
     })
   }
 
-  openPage(list) {
+  openPage(list?) {
     switch (list.title) {
       case "Upload":
+        this.nav.setRoot(Upload);
         this.menu.close();
         break;
 
